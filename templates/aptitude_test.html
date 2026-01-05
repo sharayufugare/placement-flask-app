@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aptitude Test</title>
+</head>
+<body>
+
+<h2>Aptitude Test</h2>
+
+<form method="POST" action="/aptitude_result">
+
+{% for q in questions %}
+    <p>{{ loop.index }}. {{ q[0] }}</p>
+
+    {% for opt in q[1] %}
+        <input type="radio" name="q{{ loop.index0 }}" value="{{ opt }}" required>
+        {{ opt }}<br>
+    {% endfor %}
+    <br>
+{% endfor %}
+
+<button type="submit">Submit Aptitude Test</button>
+</form>
+
+</body>
+</html>

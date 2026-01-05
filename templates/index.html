@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Placement Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-fuchsia-600 flex items-center justify-center font-[Inter] px-4">
+
+<!-- ================= MAIN CARD ================= -->
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-xl p-8 md:p-10">
+
+    <!-- Header -->
+    <div class="text-center mb-8">
+        <div class="text-5xl mb-3 text-purple-600">
+            <i class="bi bi-mortarboard-fill"></i>
+        </div>
+        <h1 class="text-3xl font-bold text-gray-900">Placement Predictor</h1>
+        <p class="text-gray-600 mt-2 text-sm">
+            Predict your placement chances based on academic & skill profile
+        </p>
+    </div>
+
+    <!-- ================= FORM ================= -->
+    <form action="/predict" method="POST" class="space-y-4">
+
+        <div>
+            <label class="text-sm font-semibold text-gray-700">CGPA</label>
+            <input type="number" step="0.01" name="CGPA" required
+                   placeholder="e.g. 8.45"
+                   class="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+        </div>
+
+        <div>
+            <label class="text-sm font-semibold text-gray-700">Internships</label>
+            <input type="number" name="Internships" required
+                   placeholder="Number of internships"
+                   class="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+        </div>
+
+        <div>
+            <label class="text-sm font-semibold text-gray-700">LeetCode Problems Solved</label>
+            <input type="number" name="LeetCode" required
+                   placeholder="Problems solved on LeetCode"
+                   class="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+        </div>
+
+        <div>
+            <label class="text-sm font-semibold text-gray-700">HackerRank Stars</label>
+            <input type="number" name="HackerRank" required
+                   placeholder="HackerRank stars"
+                   class="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+        </div>
+
+        <div>
+            <label class="text-sm font-semibold text-gray-700">Certifications</label>
+            <input type="number" name="Certifications" required
+                   placeholder="Number of certifications"
+                   class="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none">
+        </div>
+
+        <!-- ================= EXTRA TEST BUTTONS ================= -->
+        <div class="flex gap-4 mt-6">
+            <a href="/softskill"
+               class="flex-1 bg-blue-600 text-white py-2.5 rounded-lg text-center font-semibold hover:bg-blue-700 transition">
+                <i class="bi bi-chat-dots-fill mr-1"></i> Soft Skill Test
+            </a>
+
+            <a href="/aptitude"
+               class="flex-1 bg-green-600 text-white py-2.5 rounded-lg text-center font-semibold hover:bg-green-700 transition">
+                <i class="bi bi-lightning-fill mr-1"></i> Aptitude Test
+            </a>
+        </div>
+
+        <!-- ================= SUBMIT BUTTON ================= -->
+        <button type="submit"
+                class="w-full mt-6 bg-purple-600 text-white py-3 rounded-lg font-bold text-lg hover:bg-purple-700 transition shadow-md">
+            <i class="bi bi-bar-chart-fill mr-2"></i> Predict Placement
+        </button>
+
+    </form>
+</div>
+
+</body>
+</html>

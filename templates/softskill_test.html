@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soft Skill Test</title>
+</head>
+<body>
+
+<h2>Soft Skill Test</h2>
+
+<form method="POST" action="/softskill_result">
+
+{% for q in questions %}
+    <p>{{ loop.index }}. {{ q[0] }}</p>
+
+    {% for opt in q[1] %}
+        <input type="radio" name="q{{ loop.index0 }}" value="{{ opt }}" required>
+        {{ opt }}<br>
+    {% endfor %}
+    <br>
+{% endfor %}
+
+<button type="submit">Submit Soft Skill Test</button>
+</form>
+
+</body>
+</html>
